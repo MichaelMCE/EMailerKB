@@ -1,0 +1,134 @@
+key	  	reports
+--------------------------
+store		70
+setup		7A
+services	46
+games		7C
+internet	77
+home		72
+office		69
+mobile		1A
+text msg	2A
+email		1C
+fax		15
+
+stop		71
+1		74
+2		73
+3		6B
+4		22
+5		1B
+6		1D
+7		1E
+8		79
+9		7D
+0		75
+back		6C
+
+q		21
+w		23
+e		24
+r		26
+t		52
+y		5D
+u		0D
+i		0E
+o		32
+p		34
+
+enter		2C
+
+a		31
+s		33
+d		35
+f		36
+g		29
+h		5B
+j		03
+k		76
+l		3A
+@		3B
+
+lshift		3C
+z		3D
+x		4E
+c		54
+v		0B
+b		05
+n		41
+m		42
+.		43
+rshift		55
+
+calc		83
+address book	06
+symbol		49
+space		4B
+,		44
+
+left 		16
+right		09
+up		3E
+down		2E
+
+
+Amstrad Emailer Pinouts
+-----------------------
+
+Looking at top of keyboard, with the keys facing towards you. Pin 1 is 
+leftmost.
+
+PIN	SIGNAL	WIRE	
+1 	GND 	black/shield	(connected to metal plate on keyboard)
+2 	DATA 	green
+3 	CLOCK 	red
+4 	+5V 	blue		(3.3V works fine)
+
+Notes
+-----
+
+* Standard PC keyboard protocol with non standard scan codes.
+* When the bus is idle, clock and data lines are high.
+* The data line should be sampled on the rising edge of the clock pulse.
+* Data bytes are transmitted as follows:
+
+  START=0
+  D0
+  D1
+  D2
+  D3
+  D4
+  D5
+  D6
+  D7
+  PARITY (odd)
+  STOP=1
+
+
+Note that when a key is pressed, the scan code is sent as a single byte. When
+the key is released it is transmitted as two bytes, first the prefix of 0xf0
+followed by the scan code itself. 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
